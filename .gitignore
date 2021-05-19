@@ -1,0 +1,5 @@
+venv/
+api/migrations/
+api/__pycache__/
+flights/migrations/
+flights/__pycache__/
