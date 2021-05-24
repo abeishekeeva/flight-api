@@ -20,7 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'pdnv3o$m(xro$2c#6w*9n#45ydntik8mume+50$n+!hnu1c0d$'
+=======
+SECRET_KEY = '!k1609z82b5dhi!bv640m)0#g^&lh_814%$q5%7cl-tt*)y8hh'
+>>>>>>> f63659c45533655c08be4f37febc60db97a16c50
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,10 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'rest_framework',     
     'flights',
     'api',
     'tickets'
+=======
+    'rest_framework',
+    'flights',
+    'api',
+    'rest_framework.authtoken'
+>>>>>>> f63659c45533655c08be4f37febc60db97a16c50
 ]
 
 MIDDLEWARE = [
@@ -73,7 +84,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'flight_api.wsgi.application'
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

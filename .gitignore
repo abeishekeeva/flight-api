@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 asgiref==3.3.4
 Django==3.2.3
 djangorestframework==3.12.4
 psycopg2-binary==2.8.6
 pytz==2021.1
 sqlparse==0.4.1
+=======
+venv/
+api/migrations/
+api/__pycache__/
+flights/migrations/
+flights/__pycache__/
+>>>>>>> f63659c45533655c08be4f37febc60db97a16c50

@@ -33,6 +33,8 @@ class AirportView(APIView):
             # print(queryset is None)
             if not queryset:
                 return Response({'error_msg': 'No airport found'})
+    
+    
             else:
                 res = AirportDataSerializer(queryset, many=True)
                 return Response(res.data)
