@@ -48,19 +48,24 @@ class AirportView(APIView):
             return Response({'success': False, 'message': 'Please provide valid information'})
 
 
-    def delete(self, request):
-        airport_code = request.query_params.get('code')
-        snippet = self.get_object(airport_code)
-        snippet.delete()
-        return Response({'success':True, 'message': 'Airport deleted from DB'})
-        #delete airport by code
+    # def delete(self, request):
+    #     airport_code = request.query_params.get('code')
+    #     snippet = self.get_object(airport_code)
+    #     snippet.delete()
+    #     return Response({'success':True, 'message': 'Airport deleted from DB'})
+    #     #delete airport by code
         
 
 
-    def delete(self, request, pk, format=None):
-        snippet = self.get_object(pk)
-        snippet.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+    # def delete(self, request, pk):
+    #     snippet = self.get_object(pk)
+    #     snippet.delete()
+    #     return Response(status=status.HTTP_204_NO_CONTENT)
+    
+    # def delete(self, request, pk):
+    # snippet = self.get_object(pk)
+    # snippet.delete()
+    # return Response(status=status.HTTP_204_NO_CONTENT)
 
     def update():
         #update airport by code
