@@ -1,16 +1,24 @@
 from django.shortcuts import render
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.views import APIView
+from flights.models import Flights, Tickets, AircraftsData
 from rest_framework.serializers import Serializer
-from rest_framework.response import Response 
-from flights.models import Flights, AirportsData
-from .serializer import FlightSerializer, AirportDataSerializer
+from rest_framework.response import Response
+from .serializer import FlightSerializer, AirportDataSerializer, TicketsSerializer
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import BasicAuthentication
 
 class FlightListView(ListAPIView):
     queryset = Flights.objects.all()[:10]
     serializer_class = FlightSerializer
+
+class FlightsListView(RetrieveAPIView):
+    queryset = Flights.objects.all()
+    serializer_class = FlightSerializer
+
+class TicketListView(ListAPIView):
+    queryset = Tickets.objects.all()[:10]
+    serializer_class = TicketsSerializer
 
 
 class AirportView(APIView):    
@@ -42,11 +50,11 @@ class AirportView(APIView):
         else:
             return Response({"success": False, "message": "Please provide valid information"})
 
-    def delete():
+    def delete(self):
         #delete aiport by code 
         pass 
 
-    def update():
+    def update(self):
         #update airport info by code 
         pass 
 
